@@ -434,6 +434,8 @@ class FastParquetEngine(Engine):
         **kwargs
     ):
         fmd = copy.copy(fmd)
+        # Refresh the connection
+        fs.connect()
         if not len(df):
             # Write nothing for empty partitions
             rgs = []
